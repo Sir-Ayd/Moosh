@@ -1,5 +1,6 @@
 require("dotenv").config();
-const { token } = process.env;
+const { token, dbToken } = process.env;
+const mongoose = require("mongoose");
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const g = GatewayIntentBits;
 const fs = require("fs");
@@ -49,3 +50,13 @@ client.handleEvents();
 client.handleCommands();
 client.handleComponents();
 client.login(token);
+(async () => {
+  mongoose.Promise = global.Promise;
+  mongoose.set("strictQuery", false);
+  await mongoose
+    .connect(dbToken, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    })
+    .catch(console.error);
+})();
