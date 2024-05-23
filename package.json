@@ -1,0 +1,18 @@
+{
+  "name": "Moosh",
+  "version": "1.0.0",
+  "description": "Moosh Application",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "author": {
+    "name": "Ayd, Taheem"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.2",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security"
+  }
+}
