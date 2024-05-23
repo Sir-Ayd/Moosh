@@ -6,7 +6,7 @@ module.exports = {
   async execute(client) {
     console.log(`[       ${client.user.tag}      ] ✅ Loaded!`);
     client.user.setPresence({
-      activities: [{ name: `Moo Online`, type: ActivityType.Watching }],
+      activities: [{ name: `Cow Tipping`, type: ActivityType.Playing }],
     });
   },
 };
