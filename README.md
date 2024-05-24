@@ -11,6 +11,8 @@ Rubber cow can go through electric fence.
 
 This is a discord application for the controll of discord members, guilds, direct messages. This application is to contain a new discord activity.
 
+It will be a web app and use an api to connect to discord.
+
 ## Authors
 
 A project created by Sir-Ayd and Taheemmi
