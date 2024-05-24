@@ -1,2 +1,11 @@
 .env
 node_modules/
+
+# Ignore directories
+node_modules/
+.vscode/
+bin/
+
+# Ignore specific
+.Ds_Store
+Thumbs.db
