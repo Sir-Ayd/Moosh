@@ -1,4 +1,11 @@
 # Moosh
+## Game
+Moosh tipping, Cows tip over humans for points and can use the barn to upgrade/ change their cows powers and style.
+2D birds eye table top style game, pixel style game, multiplayer up to four.
+Different fences to lock out areas depedning on players stats.
+
+## Ideas
+Rubber cow can go through electric fence.
 
 ## Discord Application
 
