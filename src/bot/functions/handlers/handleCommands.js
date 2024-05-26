@@ -7,10 +7,10 @@ const clientId = '1243250995299880991';
 
 module.exports = (client) => {
     client.handleCommands = async () => {
-        const commandFolders = fs.readdirSync('./src/commands');
+        const commandFolders = fs.readdirSync('./src/bot/commands');
         for (const folder of commandFolders) {
             const commandFiles = fs
-                .readdirSync(`./src/commands/${folder}`)
+                .readdirSync(`./src/bot/commands/${folder}`)
                 .filter((file) => file.endsWith('.js'));
 
             const { commands, commandArray } = client;

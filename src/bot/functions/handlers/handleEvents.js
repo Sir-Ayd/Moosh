@@ -2,10 +2,10 @@ const fs = require('fs');
 const { connection } = require('mongoose')
 module.exports = (client) => {
     client.handleEvents = async () => {
-        const eventsFolders = fs.readdirSync(`./src/events`);
+        const eventsFolders = fs.readdirSync(`./src/bot/events`);
         for (const folder of eventsFolders) {
             const eventsFiles = fs
-                .readdirSync(`./src/events/${folder}`)
+                .readdirSync(`./src/bot/events/${folder}`)
                 .filter((file) => file.endsWith('.js'));
             switch (folder) {
                 case "client":

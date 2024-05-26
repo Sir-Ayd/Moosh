@@ -37,10 +37,10 @@ client.commandArray = [];
 
 client.on("error", () => { });
 
-const funtionFolders = fs.readdirSync(`./src/functions`);
+const funtionFolders = fs.readdirSync(`./src/bot/functions`);
 for (const folder of funtionFolders) {
   const funtionFiles = fs
-    .readdirSync(`./src/functions/${folder}`)
+    .readdirSync(`./src/bot/functions/${folder}`)
     .filter((file) => file.endsWith(".js"));
   for (const file of funtionFiles)
     require(`./functions/${folder}/${file}`)(client);

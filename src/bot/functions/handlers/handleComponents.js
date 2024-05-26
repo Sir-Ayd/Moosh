@@ -2,9 +2,9 @@ const { readdirSync } = require('fs');
 
 module.exports = (client) => {
     client.handleComponents = async () => {
-        const componentsFolders = readdirSync(`./src/components`);
+        const componentsFolders = readdirSync(`./src/bot/components`);
         for (const folder of componentsFolders) {
-            const componentsFiles = readdirSync(`./src/components/${folder}`)
+            const componentsFiles = readdirSync(`./src/bot/components/${folder}`)
                 .filter((file) => file.endsWith('.js')
                 );
             const { buttons, selectMenus, modals } = client;
