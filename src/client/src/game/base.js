@@ -1,8 +1,10 @@
+import Player from './player.js';
+
 class Game {
   constructor(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
-    this.player = { x: 50, y: 50, width: 20, height: 20, speed: 5 };
+    this.player = new Player(50, 50, 20, 20, 5, canvas);
     this.keys = {};
     this.init();
   }
@@ -14,18 +16,8 @@ class Game {
   }
 
   update() {
-    // Arrow keys
-    if (this.keys['ArrowUp']) this.player.y -= this.player.speed;
-    if (this.keys['ArrowDown']) this.player.y += this.player.speed;
-    if (this.keys['ArrowLeft']) this.player.x -= this.player.speed;
-    if (this.keys['ArrowRight']) this.player.x += this.player.speed;
-
-    // WASD keys
-    if (this.keys['w']) this.player.y -= this.player.speed;
-    if (this.keys['s']) this.player.y += this.player.speed;
-    if (this.keys['a']) this.player.x -= this.player.speed;
-    if (this.keys['d']) this.player.x += this.player.speed;
-
+    this.player.move(this.keys);
+    
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.drawPlayer();
 
