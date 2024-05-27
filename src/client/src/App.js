@@ -38,6 +38,8 @@ function App() {
         <div className='centre-menu'>
           <h1>Main Menu</h1>
           <button className='menu-buttons' onClick={handleStartClick}>Start Game</button>
+          <button className='menu-buttons' onClick={handleStartClick}>Barn</button>
+          <button className='menu-buttons' onClick={handleStartClick}>Settings</button>
         </div>
       ) : null}
       <canvas ref={canvasRef} style={{ border: '1px solid black', display: showMenu ? 'none' : 'block' }} />
