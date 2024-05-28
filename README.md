@@ -1,4 +1,8 @@
 # Moosh
+
+## Moosh'd
+The coming of thr herd, cow tipping.
+
 ## Game
 Moosh tipping, Cows tip over humans for points and can use the barn to upgrade/ change their cows powers and style.
 2D birds eye table top style game, pixel style game, multiplayer up to four.
