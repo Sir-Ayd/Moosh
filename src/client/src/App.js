@@ -3,6 +3,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
 import OptionsPage from './game/OptionsPage'; // Import the OptionsPage component
+import './index.css'; // change if CSS has been relocated
+
 
 function App() {
   const canvasRef = useRef(null);
@@ -42,7 +44,7 @@ function App() {
     setShowMenu(false); // Hide the main menu when options are shown
   };
 
-  //define handleBackClick to navigate back from OptionsPage
+  //function to go back a notch
   const handleBackClick = () => {
     setShowOptions(false); // hide the options page
     setShowMenu(true); // show the main menu
@@ -52,15 +54,20 @@ function App() {
     <div className="App">
       {showMenu ? (
         <div className='centre-menu'>
-          <h1>Main Menu</h1>
+
+          <h3>Main Menu</h3>
           <button className='menu-buttons' onClick={handleStartClick}>Start Game</button>
           <button className='menu-buttons' onClick={handleStartClick}>Barn</button>
           <button className='menu-buttons' onClick={handleSettingsClick}>Settings</button> {/* Call handleSettingsClick for "Settings" button */}
         </div>
+        
+
       ) : null}
 
       {showOptions ? (
-        <OptionsPage onBackClick={handleBackClick} /> 
+        <div>
+          <OptionsPage onBackClick={handleBackClick} /> 
+        </div>
       ) : null}
 
       <canvas ref={canvasRef} style={{ border: '1px solid black', display: showMenu ? 'none' : 'block' }} />
