@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
 import OptionsPage from './game/OptionsPage'; // Import the OptionsPage component
+import './index.css'; // change if CSS has been relocated
 
 function App() {
   const canvasRef = useRef(null);
