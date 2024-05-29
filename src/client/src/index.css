@@ -28,9 +28,40 @@ canvas {
   border: 1px solid rgba(255, 255, 255, 1);
   display: block;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .menu-buttons:hover {
   font-size: xx-large;
   background: #FFA500;
+}
+
+h1{
+  text-align: center;
+  background-color: red;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2{
+  text-align: center;
+  background-color: rgba(165, 42, 42, 0.628);
+  margin-top: 0px;
+}
+
+h3{
+  margin-top: 0px;
+  font-size: 60px;
+}
+
+p{
+  text-align: center;
+  background-color: red;
+  margin-top: 0px;
+}
+
+head{
+  padding: 70px;
+  border: 1px solid #4caf50;
+  background-color: red;
 }
