@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
-import OptionsPage from './game/OptionsPage'; // Import the OptionsPage component
+import Settings from './game/Settings'; // Import the Settings component
 import './index.css'; // change if CSS has been relocated
 
 
@@ -51,7 +51,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+
+    <div className={`App ${!showMenu ? 'background-hidden' : ''}`}>
+      <div className="background-container">
+        <div className="background-image"></div>
+      </div>
       {showMenu ? (
         <div className='centre-menu'>
 
@@ -66,7 +70,7 @@ function App() {
 
       {showOptions ? (
         <div>
-          <OptionsPage onBackClick={handleBackClick} /> 
+          <Settings onBackClick={handleBackClick} /> 
         </div>
       ) : null}
 
