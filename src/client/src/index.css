@@ -8,7 +8,9 @@ html, body {
 
 /* Set Main Menu set background to black need to add background image when art is made */
 .menu-background {
-  background-color: black;
+  background-image: url(./../public/swagmenu.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   width: 100vw;
   height: 100vh;
@@ -20,7 +22,7 @@ html, body {
   padding-top: 10vh;
   color: red;
   font-size: 72pt;
-  rotate:calc(-35deg)
+  rotate:calc(-25deg)
 }
 
 /* Make canvas a flex block */
@@ -59,7 +61,6 @@ canvas {
 
 h1{
   text-align: center;
-  background-color: red;
   margin-top: 0px;
   margin-bottom: 0px;
 }
