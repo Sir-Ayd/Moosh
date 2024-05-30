@@ -21,6 +21,10 @@ class Player {
       if (keys['s'] && this.y < this.canvas.height - this.height) this.y += this.speed;
       if (keys['a'] && this.x > 0) this.x -= this.speed;
       if (keys['d'] && this.x < this.canvas.width - this.width) this.x += this.speed;
+
+    //De Bug
+    console.log(`Player position: (${this.x}, ${this.y})`);
+    console.log(`Canvas dimensions: (${this.canvas.width}, ${this.canvas.height})`);
     }
   }
   
