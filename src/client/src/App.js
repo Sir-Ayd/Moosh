@@ -2,14 +2,19 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
+<<<<<<< Updated upstream
 import Settings from './game/OptionsPage'; // Import the Settings component
 import './index.css'; // change if CSS has been relocated
 
+=======
+import OptionsPage from './game/OptionsPage';
+import Menu from './components/Menu'; // Import the Menu component
+>>>>>>> Stashed changes
 
 function App() {
   const canvasRef = useRef(null);
   const [showMenu, setShowMenu] = useState(true);
-  const [showOptions, setShowOptions] = useState(false); // Add state for showing options
+  const [showOptions, setShowOptions] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,19 +43,22 @@ function App() {
     setShowMenu(false);
   };
 
-  // Function to handle displaying options when the "Settings" button is clicked
   const handleSettingsClick = () => {
     setShowOptions(true);
-    setShowMenu(false); // Hide the main menu when options are shown
+    setShowMenu(false);
   };
 
+<<<<<<< Updated upstream
   //function to go back a notch
+=======
+>>>>>>> Stashed changes
   const handleBackClick = () => {
-    setShowOptions(false); // hide the options page
-    setShowMenu(true); // show the main menu
+    setShowOptions(false);
+    setShowMenu(true);
   };
 
   return (
+<<<<<<< Updated upstream
 
     <div className={`App ${!showMenu ? 'background-hidden' : ''}`}>
       <div className="background-container">
@@ -73,6 +81,16 @@ function App() {
           <Settings onBackClick={handleBackClick} /> 
         </div>
       ) : null}
+=======
+    <div className="App">
+      {showMenu && (
+        <Menu onStartClick={handleStartClick} onSettingsClick={handleSettingsClick} />
+      )}
+
+      {showOptions && (
+        <OptionsPage onBackClick={handleBackClick} />
+      )}
+>>>>>>> Stashed changes
 
       <canvas ref={canvasRef} style={{ border: '1px solid black', display: showMenu ? 'none' : 'block' }} />
     </div>

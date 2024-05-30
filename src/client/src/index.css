@@ -6,10 +6,29 @@ html, body {
   height: 100%;
 }
 
+/* Set Main Menu set background to black need to add background image when art is made */
+.menu-background {
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Make slanted header Cow tipper */
+.header-menu {
+  position: absolute;
+  padding-top: 10vh;
+  color: red;
+  font-size: 72pt;
+  rotate:calc(-35deg)
+}
+
+/* Make canvas a flex block */
 canvas {
   display: block;
 }
 
+/* centre main menu */
 .centre-menu {
   position: absolute;
   top: 50%;
@@ -18,6 +37,7 @@ canvas {
   text-align: center;
 }
 
+/* Make main menu buttons look fancy */
 .menu-buttons {
   font-size: x-large;
   background: rgba(255, 255, 255, 0.36);
@@ -31,6 +51,7 @@ canvas {
   text-align: center;
 }
 
+/* make button larger when mouse hovers over buttons */
 .menu-buttons:hover {
   font-size: xx-large;
   background: #FFA500;
