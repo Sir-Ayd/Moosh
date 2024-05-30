@@ -2,14 +2,16 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
-import Menu from './components/Menu'
-import OptionsPage from './game/OptionsPage'; // Import the Settings component
-
+import Menu from './components/Menu';
+import Settings from './game/Settings';
+import Barn from './game/Barn';
+import './index.css';
 
 function App() {
   const canvasRef = useRef(null);
   const [showMenu, setShowMenu] = useState(true);
   const [showOptions, setShowOptions] = useState(false);
+  const [showBarn, setShowBarn] = useState(false); // State for showing the Barn component
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -24,7 +26,7 @@ function App() {
       new Game(canvas);
     };
 
-    resizeCanvas(); // Set initial size
+    resizeCanvas();
 
     if (!showMenu) {
       startGame();
@@ -43,22 +45,29 @@ function App() {
     setShowMenu(false);
   };
 
-  //function to go back a notch
+  const handleBarnClick = () => {
+    setShowBarn(true);
+    setShowMenu(false);
+  };
+
   const handleBackClick = () => {
     setShowOptions(false);
+    setShowBarn(false);
     setShowMenu(true);
   };
 
   return (
     <div className="App">
       {showMenu && (
-        <Menu onStartClick={handleStartClick} onSettingsClick={handleSettingsClick} />
+        <Menu
+          onStartClick={handleStartClick}
+          onSettingsClick={handleSettingsClick}
+          onBarnClick={handleBarnClick} // Add Barn button handler
+        />
       )}
 
-      {showOptions && (
-        <OptionsPage onBackClick={handleBackClick} />
-      )}
-
+      {showOptions && <Settings onBackClick={handleBackClick} />}
+      {showBarn && <Barn onBackClick={handleBackClick} />}
       <canvas ref={canvasRef} style={{ border: '1px solid black', display: showMenu ? 'none' : 'block' }} />
     </div>
   );
