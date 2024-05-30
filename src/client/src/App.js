@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
-import Settings from './game/Settings'; // Import the Settings component
+import Settings from './game/OptionsPage'; // Import the Settings component
 import './index.css'; // change if CSS has been relocated
 
 
