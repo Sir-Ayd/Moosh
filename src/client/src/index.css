@@ -7,6 +7,7 @@ html, body {
 }
 
 /* Set Main Menu set background to black need to add background image when art is made */
+
 .menu-background {
   background-image: url(./../public/swagmenu.png);
   background-repeat: no-repeat;
@@ -17,6 +18,7 @@ html, body {
 }
 
 /* Make slanted header Cow tipper */
+
 .header-menu {
   position: absolute;
   padding-top: 10vh;
@@ -30,7 +32,6 @@ canvas {
   display: block;
 }
 
-/* centre main menu */
 .centre-menu {
   position: absolute;
   top: 50%;
@@ -39,7 +40,6 @@ canvas {
   text-align: center;
 }
 
-/* Make main menu buttons look fancy */
 .menu-buttons {
   font-size: x-large;
   background: rgba(255, 255, 255, 0.36);
@@ -53,7 +53,6 @@ canvas {
   text-align: center;
 }
 
-/* make button larger when mouse hovers over buttons */
 .menu-buttons:hover {
   font-size: xx-large;
   background: #FFA500;
@@ -88,11 +87,11 @@ head{
   background-color: red;
 }
 
-
 body{
-display: flex;
-flex-direction: column;
-min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
 
 main{
@@ -100,5 +99,5 @@ main{
 }
 
 footer{
-margin-top: auto;
+  margin-top: auto;
 }
