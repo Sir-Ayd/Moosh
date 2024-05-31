@@ -3,8 +3,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Game from './game/base';
 import Menu from './components/Menu';
-import Settings from './game/Settings';
-import Barn from './game/Barn';
+import Settings from './components/Settings';
+import Barn from './components/Barn';
 import './index.css';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(true);
   const [showOptions, setShowOptions] = useState(false);
   const [showBarn, setShowBarn] = useState(false); // State for showing the Barn component
+  const [selectedColor, setSelectedColor] = useState('blue');  //State for selected chatacter color
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,18 +24,18 @@ function App() {
 
     const startGame = () => {
       setShowMenu(false);
-      new Game(canvas);
+      new Game(canvas, selectedColor); // americans again
     };
 
     resizeCanvas();
 
-    if (!showMenu) {
+    if (!showMenu && !showBarn && !showOptions) {
       startGame();
     }
 
     window.addEventListener('resize', resizeCanvas);
     return () => window.removeEventListener('resize', resizeCanvas);
-  }, [showMenu]);
+  }, [showMenu, showBarn, showOptions, selectedColor]);
 
   const handleStartClick = () => {
     setShowMenu(false);
@@ -56,6 +57,10 @@ function App() {
     setShowMenu(true);
   };
 
+  const handleCharacterSelect = (color) => {
+    setSelectedColor(color); // update the selected color
+  };
+
   return (
     <div className="App">
       {showMenu && (
@@ -67,7 +72,7 @@ function App() {
       )}
 
       {showOptions && <Settings onBackClick={handleBackClick} />}
-      {showBarn && <Barn onBackClick={handleBackClick} />}
+      {showBarn && <Barn onBackClick={handleBackClick} onCharacterSelect={handleCharacterSelect} />}
       <canvas ref={canvasRef} style={{ border: '1px solid black', display: showMenu ? 'none' : 'block' }} />
     </div>
   );
